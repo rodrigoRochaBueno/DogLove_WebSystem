@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html data-ng-app="appCliente">
+<head>
+<meta charset="utf-8"/>
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="./JavaScript/app.js"></script>
+</head>
+<body data-ng-controller="indexController">
+oi {{nome + sobreNome}}<br/>
+
+<!-- div data-ng-repeat="func in funcionarios">
+<h3 style="background-color: gray">{{func.nome}}</h3><br/>-->
+
+NOME: <input type="text" placeholder="Digite o nome" data-ng-model="funcionario.nome"/><br/>
+SALÁRIO: <input type="text" placeholder="Digite o salario" data-ng-model="funcionario.salario"/><br/>
+SETOR: <input type="text" placeholder="Digite o setor" data-ng-model="funcionario.setor"/><br/>
+<input type="button" value="salvar" data-ng-click="salvarFuncionario()"/><br/>
+
+<h4>Excluir Cliente</h4><br/>
+Digite o nome do cliente que deseja excluir<br/>
+<input type="text" placeholder="nome" data-ng-model="funcNome"/><br/>
+<input type="button" value="Excluir" data-ng-click="excluirFuncionario()"/><br/>
+
+*******************************************************
+
+<h4>Alterar funcionario</h4><br/>
+ID do funcionario<input type="text" data-ng-model="funcionario.id"/><br/>
+Nome: <input type="text" data-ng-model="funcionario.nome"/><br/>
+Salário: <input type="text" data-ng-model="funcionario.salario"/><br/>
+Setor: <input type="text" data-ng-model="funcionario.setor"/><br/>
+<input type="button" value="Salvar Mudanças" data-ng-click="alterarFuncionario()"/><br/>
+
+
+
+<!-- /div -->
+</body>
+</html>
