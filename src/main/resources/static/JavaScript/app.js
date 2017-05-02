@@ -1,89 +1,24 @@
-var appCliente = angular.module("appCliente",[]);
+var appCliente = angular.module("appCliente",["ngRoute"])
 
-//Controllers
-appCliente.controller("indexController", function($scope, $http){
+.config(function($routeProvider, $locationProvider){
 	
-	$scope.nome="Rodrigo";
-	$scope.sobreNome=" Rocha Bueno";
-	$scope.funcionarios=[];
-	$scope.funcNome;
+	$routeProvider
+	.when('/clientes', {templateUrl: 'cliente.html', controller:'indexController'})
+	.when('/estados', {templateUrl: 'estado.html', controller:'estado-controller'})
+	.when('/teste', {templateUrl: 'web.html', controller:'estado-controller'})
+	.when('/cidades', {templateUrl: 'cidade.html', controller:'cidade-controller'})
+	.when('/detalhes/:funcNome', {templateUrl: 'funcionario-detalhe.html', controller: 'funcionario-detalhe-controller'})
+	.when('/login', {templateUrl: 'login.html', controller:'loginController'});
 	
-	$scope.funcionario={};
 	
-	$scope.carregarFuncionarios= function(){
+	
 		
-		$http({method:"GET", url:"http://localhost:8092/funcionarios"})
-		.then(function(response){
-			$scope.funcionarios.push(response.data);
-		
-		}, function(response){
-			
-			console.log(response.data);
-			console.log(response.status);
-			
-		});
+})
 
-		
-	};
-	
-	$scope.salvarFuncionario = function(){
-		
-		$http({method:"POST", url:"http://localhost:8092/funcionarios", data:$scope.funcionario})
-		.then(function(response){
-			$scope.funcionarios=response.data;
-			
-			console.log(response.data);
-			console.log(response.status);
-			
-			
-		
-		}, function(response){
-			
-			console.log(response.data);
-			console.log(response.status);
-			
-		});
-
-		
-	};
-	
-$scope.excluirFuncionario = function(){
-		
-		$http({method:"DELETE", url:"http://localhost:8092/funcionarios/" + $scope.funcNome})
-		.then(function(response){
-			$scope.funcionarios=response.data;
-			
-			console.log(response.data);
-			console.log(response.status);
-		
-		}, function(response){
-			
-			console.log(response.data);
-			console.log(response.status);
-			
-		});
-
-		
-	};
-	
-$scope.alterarFuncionario = function(){
-		
-		$http({method:"PUT", url:"http://localhost:8092/funcionarios/" + $scope.funcionario.id, data: $scope.funcionario})
-		.then(function(response){
-			$scope.funcionarios=response.data;
-			
-			console.log(response.data);
-			console.log(response.status);
-		
-		}, function(response){
-			
-			console.log(response.data);
-			console.log(response.status);
-			
-		});
-
-		
-	};
-	
-	$scope.carregarFuncionarios();
+	.controller('mainController', function($scope, $location, $route, $routeParams){
+		$scope.$location = $location;
+		$scope.$route = $route;
+		$scope.$routeParams = $routeParams;
 });
+
+

@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html data-ng-app="appCliente">
 <head>
+<base href='/' />
 <meta charset="utf-8"/>
 <title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 <script src="./JavaScript/app.js"></script>
+<script src="./JavaScript/controllers/cliente-controller.js"></script>
+<script src="./JavaScript/controllers/cidade-controller.js"></script>
+<script src="./JavaScript/controllers/estado-controller.js"></script>
+<script src="./JavaScript/controllers/funcionario-detalhe-controller.js"></script>
+<script src="./JavaScript/controllers/loginController.js"></script>
 </head>
-<body data-ng-controller="indexController">
-oi {{nome + sobreNome}}<br/>
+<body data-ng-controller="mainController">
 
-<!-- div data-ng-repeat="func in funcionarios">
-<h3 style="background-color: gray">{{func.nome}}</h3><br/>-->
+<a href="#/clientes">Clientes</a>
+<a href="#/estados">Estados</a>
+<a href="#/cidades">AgoraOuNunca</a>
+<a href="#/teste">teste</a>
+<a href="#/login">login</a>
 
-NOME: <input type="text" placeholder="Digite o nome" data-ng-model="funcionario.nome"/><br/>
-SALÁRIO: <input type="text" placeholder="Digite o salario" data-ng-model="funcionario.salario"/><br/>
-SETOR: <input type="text" placeholder="Digite o setor" data-ng-model="funcionario.setor"/><br/>
-<input type="button" value="salvar" data-ng-click="salvarFuncionario()"/><br/>
-
-<h4>Excluir Cliente</h4><br/>
-Digite o nome do cliente que deseja excluir<br/>
-<input type="text" placeholder="nome" data-ng-model="funcNome"/><br/>
-<input type="button" value="Excluir" data-ng-click="excluirFuncionario()"/><br/>
-
-*******************************************************
-
-<h4>Alterar funcionario</h4><br/>
-ID do funcionario<input type="text" data-ng-model="funcionario.id"/><br/>
-Nome: <input type="text" data-ng-model="funcionario.nome"/><br/>
-Salário: <input type="text" data-ng-model="funcionario.salario"/><br/>
-Setor: <input type="text" data-ng-model="funcionario.setor"/><br/>
-<input type="button" value="Salvar Mudanças" data-ng-click="alterarFuncionario()"/><br/>
+<p>Path: {{$location.path()}}</p>
+<p>templateUrl: {{$route.current.templateUrl}}</p>
+<p>Params: {{$routeParams}}</p>
 
 
 
-<!-- /div -->
+<div data-ng-view>
+
+</div>
+
 </body>
 </html>

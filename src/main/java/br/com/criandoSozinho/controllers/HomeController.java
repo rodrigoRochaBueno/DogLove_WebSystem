@@ -22,7 +22,7 @@ public class HomeController {
 		return "web.html";
 	}
 	
-	@GetMapping("/home2")
+	@GetMapping("/")
 	public String irPara2(){
 		return "index2.html";
 	}

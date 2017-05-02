@@ -1,0 +1,44 @@
+oi {{nome + sobreNome}}<br/>
+
+<div>
+
+</div>
+
+
+<form data-novalidate name='frmCliente'>
+
+<div>
+	NOME: <input type="text" placeholder="Digite o nome" name='nome' data-ng-model="funcionario.nome" data-required /><br/>
+	<span data-ng-show='frmCliente.nome.$error.required'>Campo nome obrigatório</span>
+</div>
+
+SALÁRIO: <input type="text" placeholder="Digite o salario" data-ng-model="funcionario.salario"/><br/>
+SETOR: <input type="text" placeholder="Digite o setor" data-ng-model="funcionario.setor"/><br/>
+ESTADO: <select><option data-ng-repeat='es in estados' value='{{es.id}}' data-ng-model='funcionario.estado'>{{es.uf}}</option></select>
+<input type="button" value="salvar" data-ng-click="salvarFuncionario()" data-ng-disabled='frmCliente.nome.$invalid'/><br/>
+
+</form>
+
+<div data-ng-repeat="func in funcionarios">
+
+Nome: {{func.nome}}<br/>
+Salario: {{func.salario}}<br/>
+Setor: {{func.setor}}<br/><br/>
+<a href='#/detalhes/{{func.nome}}'>Detalhes</a>
+
+</div>
+
+
+<h4>Excluir Cliente</h4><br/>
+Digite o nome do cliente que deseja excluir<br/>
+<input type="text" placeholder="nome" data-ng-model="funcNome"/><br/>
+<input type="button" value="Excluir" data-ng-click="excluirFuncionario()"/><br/>
+
+*******************************************************
+
+<h4>Alterar funcionario</h4><br/>
+ID do funcionario<input type="text" data-ng-model="funcionario.id"/><br/>
+Nome: <input type="text" data-ng-model="funcionario.nome"/><br/>
+Salário: <input type="text" data-ng-model="funcionario.salario"/><br/>
+Setor: <input type="text" data-ng-model="funcionario.setor"/><br/>
+<input type="button" value="Salvar Mudanças" data-ng-click="alterarFuncionario()"/><br/>

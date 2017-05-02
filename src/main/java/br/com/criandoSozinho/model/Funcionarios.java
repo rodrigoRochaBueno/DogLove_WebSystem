@@ -3,6 +3,8 @@ package br.com.criandoSozinho.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Id;
 
@@ -16,6 +18,9 @@ public class Funcionarios {
 	private String nome;
 	private double salario;
 	private String setor;
+	@JoinColumn
+	@ManyToOne
+	private Estado estado;
 	
 	public Funcionarios(){
 		

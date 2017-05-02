@@ -14,8 +14,7 @@ import br.com.criandoSozinho.model.Funcionarios;
 import br.com.criandoSozinho.services.FuncionarioService;
 
 
-
-@RestController
+@RestController("/admin")
 public class ControllerTest {
 	
 	@Autowired

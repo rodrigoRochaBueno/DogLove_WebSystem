@@ -8,8 +8,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.criandoSozinho.model.FuncionarioRepository;
 import br.com.criandoSozinho.model.Funcionarios;
+import br.com.criandoSozinho.repository.FuncionarioRepository;
 
 
 @Service
