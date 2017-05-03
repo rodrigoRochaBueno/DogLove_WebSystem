@@ -1,5 +1,8 @@
 package br.com.criandoSozinho.controllers;
 
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureException;
+
 import java.io.IOException;
 
 import javax.servlet.FilterChain;
@@ -25,6 +28,16 @@ public class TokenFilter extends GenericFilterBean {
 		}
 		
 		String token = header.substring(7); //extraindo somente o token sem o bearer
+		
+		//Verificar se o Token é valido
+		
+		try{
+		Jwts.parser().setSigningKey("cripto").parseClaimsJws(token).getBody();
+		}catch(SignatureException e){
+			throw new ServletException("Token inválido");
+		}
+		
+		chain.doFilter(request, response);
 		
 	}
 

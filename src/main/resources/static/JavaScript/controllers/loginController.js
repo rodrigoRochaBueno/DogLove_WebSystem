@@ -2,6 +2,7 @@ appCliente.controller("loginController", function($scope, $http){
 	
 	
 	$scope.usuario ={};
+	$scope.token = "";
 	
 	
 	$scope.validar = function(){
@@ -9,13 +10,13 @@ appCliente.controller("loginController", function($scope, $http){
 		.then(function(response){
 			
 			console.log(response);
-			console.status(response.data);
+			
+			$scope.token= response.data.token;
 			
 			
 			}, function(response){
 				
 				console.log(response.data);
-				console.status(response.data);
 				
 			});
 		};
