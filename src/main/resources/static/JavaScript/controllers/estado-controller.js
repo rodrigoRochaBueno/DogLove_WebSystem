@@ -5,7 +5,7 @@ appCliente.controller("estado-controller", function($scope, $http){
 	$scope.deletar;
 	
 	$scope.salvarEstado = function(){
-		$http({method:"POST", url:"http://localhost:8092/estados", data:$scope.estado})
+		$http({method:"POST", url:"http://localhost:8092/admin/estados", data:$scope.estado})
 		.then(function(response){
 			$scope.estados = response.data;
 			
@@ -25,7 +25,7 @@ appCliente.controller("estado-controller", function($scope, $http){
 	};
 	
 	$scope.carregarEstados = function(){
-		$http.get('/estados')
+		$http.get('admin/estados')
 		.then(function(response){
 			$scope.estados=response.data;
 			
@@ -45,7 +45,7 @@ appCliente.controller("estado-controller", function($scope, $http){
 	
 	$scope.deletarEstado = function(){
 	
-		$http({method:"DELETE", url:"/estados/" + $scope.deletar})
+		$http({method:"DELETE", url:"admin/estados/" + $scope.deletar})
 		.then(function(response){
 			
 			console.log(response.data);

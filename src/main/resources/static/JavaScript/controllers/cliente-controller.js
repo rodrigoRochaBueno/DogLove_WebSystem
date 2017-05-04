@@ -9,9 +9,13 @@ appCliente.controller("indexController", function($scope, $http){
 	
 	$scope.funcionario={};
 	
+	token = localStorage.getItem("userToken");
+	
+	//$http.defaults.headers.common.Authorization = 'Bearer ' + token;
+	
 	$scope.carregarFuncionarios = function(){
 		
-		$http({method:"GET", url:"http://localhost:8092/funcionarios"})
+		$http({method:"GET", url:"http://localhost:8092/admin/funcionarios"})
 		.then(function(response){
 			$scope.funcionarios = response.data;
 		
@@ -28,8 +32,10 @@ appCliente.controller("indexController", function($scope, $http){
 	
 	$scope.salvarFuncionario = function(){
 		
-		$http({method:"POST", url:"http://localhost:8092/funcionarios", data:$scope.funcionario})
+		
+		$http({method:"POST", url:"http://localhost:8092/admin/funcionarios", data:$scope.funcionario})
 		.then(function(response){
+			
 			$scope.funcionarios=response.data;
 			
 			console.log(response.data);
@@ -49,7 +55,7 @@ appCliente.controller("indexController", function($scope, $http){
 	
 $scope.excluirFuncionario = function(){
 		
-		$http({method:"DELETE", url:"http://localhost:8092/funcionarios/" + $scope.funcNome})
+		$http({method:"DELETE", url:"http://localhost:8092/admin/funcionarios/" + $scope.funcNome})
 		.then(function(response){
 			$scope.funcionarios=response.data;
 			
@@ -68,7 +74,7 @@ $scope.excluirFuncionario = function(){
 	
 $scope.alterarFuncionario = function(){
 		
-		$http({method:"PUT", url:"http://localhost:8092/funcionarios/" + $scope.funcionario.id, data: $scope.funcionario})
+		$http({method:"PUT", url:"http://localhost:8092/admin/funcionarios/" + $scope.funcionario.id, data: $scope.funcionario})
 		.then(function(response){
 			$scope.funcionarios=response.data;
 			
@@ -86,7 +92,7 @@ $scope.alterarFuncionario = function(){
 	};
 	
 	$scope.carregarEstados = function(){
-		$http.get('/estados')
+		$http.get("http://localhost:8092/admin/estados/")
 		.then(function(response){
 			$scope.estados=response.data;
 			

@@ -21,4 +21,9 @@ var appCliente = angular.module("appCliente",["ngRoute"])
 		$scope.$routeParams = $routeParams;
 });
 
+appCliente.config(function($httpProvider){
+	$httpProvider.interceptors.push('tokenInterceptor');
+	
+});
+
 

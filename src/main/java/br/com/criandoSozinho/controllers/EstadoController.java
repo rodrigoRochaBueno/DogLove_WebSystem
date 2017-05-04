@@ -15,6 +15,7 @@ import br.com.criandoSozinho.services.EstadoService;
 
 
 @RestController
+@RequestMapping("/admin")
 public class EstadoController {
 	
 	@Autowired

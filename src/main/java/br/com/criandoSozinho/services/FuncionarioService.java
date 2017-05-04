@@ -39,8 +39,10 @@ public class FuncionarioService {
 	
 	public void deleteFunc(String nome){
 		for(Funcionarios i : funcionarioRepository.findAll()){
-			if(i.getNome().equals(nome))
+			if(i.getNome().equals(nome)){
 				funcionarioRepository.delete(i);
+				break;
+			}
 		}
 	}
 	

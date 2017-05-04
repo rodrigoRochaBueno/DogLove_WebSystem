@@ -12,6 +12,7 @@ appCliente.controller("loginController", function($scope, $http){
 			console.log(response);
 			
 			$scope.token= response.data.token;
+			localStorage.setItem("userToken", response.data.token);
 			
 			
 			}, function(response){
