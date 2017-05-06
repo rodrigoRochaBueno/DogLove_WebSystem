@@ -11,19 +11,81 @@
 		<script src="./JavaScript/controllers/agendaController.js"></script>
 		<script src="./JavaScript/controllers/cadastroController.js"></script>
 		<script src="./JavaScript/controllers/homeController.js"></script>
-		<script src="./js/cadastro.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/estilohome.css">
+		<link rel="stylesheet" type="text/css" href="css/estiloFooter.css">
+		<link rel="stylesheet" type="text/css" href="css/estiloHeader.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	
 	<body data-ng-controller="mainController">
 	
-	<a href="#/home">home</a>
-	<a href="#/cadastro">cadastro</a>
-	<a href="#/agenda">agenda</a>
+	<header>
+				<div class="section">
+					<img id="usuario" src="images/userhome.png"/>
+				</div>
+				<img id="logo" src="images/logo.png"/>
+				<ul class=menu>
+					<li class="fa fa-home" id="primeiro"><a href="#/home"> Inicio</li></a>
+					<li class="fa fa-caret-down" id="cliente"><a href="#/cadastro"> Clientes</a>
+					<li class="fa fa-dollar"><a href="#/financeiro"> Financeiro</li></a>
+					<li class="fa fa-camera"><a href="#/galeria"> Galeria</li></a>
+					<li class="fa fa-calendar"><a href="#/agenda"> Agenda</li></a>
+					<span id="claudia">Olá Claudia Rocha</span><input id="busca"type="text" placeholder="Buscar no site"/>
+				</ul>
+			</header>
 		
 		<div data-ng-view>
 
 		</div>
+		
+		<footer class="rodape">
+				<div class="conteudo">
+					<div class="1">
+						<figure>
+							<img src="images/rb.png"/>
+								<figcaption style="color:black;">Designed by Rodrigo Rocha Bueno &copy 2017</figcaption>
+						</figure>
+					</div>
+					<div class="2">
+						<h4 style="color:black; font-family: arial;">Features</h4><br/>
+						<a style="color:black; font-family: arial;"> 
+							Code review<br/><br/>
+							Project management<br/><br/>
+							Integrations<br/><br/>
+							Community<br/><br/>
+							Documentation<br/><br/>
+							Code hosting<br/><br/>
+						</a>
+					</div>
+					<div class="3" style="margin-left: 55px;">
+						<h4 style="color:black; font-family: arial;">Platform</h4><br/>
+						<a style="color:black; font-family: arial;"> 
+							Atom<br/><br/>
+							Electron<br/><br/>
+							GitHub Desktop<br/><br/>
+							Developers<br/><br/>
+						</a>
+					</div>
+					<div class="4" style="margin-left: 55px;">
+						<h4 style="color:black; font-family: arial;">Community</h4><br/>
+						<a style="color:black; font-family: arial;"> 
+							Personal<br/><br/>
+							Open source<br/><br/>
+							For Business<br/><br/>
+							For Education<br/><br/>
+							Sponsorships<br/><br/>
+						</a>
+					</div>
+					<div class="social">
+						<img src="images/git.png" style="margin-left: 150px;"/>
+						<img src="images/facebook.png"/>
+						<img src="images/twitter.png"/>
+						<img src="images/blogger.png"/>
+						<img src="images/google.png"/>
+					
+					</div>
+				</div>
+			</footer>
+			
 
 	</body>
 </html>
