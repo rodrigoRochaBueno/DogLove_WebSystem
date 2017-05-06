@@ -1,0 +1,70 @@
+.btnok {
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    height: 40px;
+    width: 160px;
+    border: none;
+    background-color: #ec41ce;
+    color: #fff;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.campo{
+	height: 34px;
+	width: 304px;
+	border-radius: 10px;
+	padding: 6px 12px;
+	
+}
+
+img{
+	margin-top: -100px;
+	margin-right: -90px;
+	margin-left: 80px;
+	float: left;
+}
+
+.container{
+	margin-top: 290px;
+	margin-right: 0px;
+}
+
+.tudo{
+	text-align: center;
+}
+
+#esqueci{
+	font-family: arial;
+	text-decoration: none;
+	color: gray;
+}
+
+.container a{
+	text-align: right;
+}
+
+#user{
+	height:24px;
+	position: relative;
+	margin-top: 4px;
+	margin-left: 200px;
+	margin-right: -800px;
+	
+	
+}
+
+#senha{
+	height:22px;
+	position: relative;
+	margin-top: 57px;
+	margin-left: 200px;
+	margin-right: -800px;
+	
+}
+
+#esqueci:hover{
+	text-decoration: underline;
+}

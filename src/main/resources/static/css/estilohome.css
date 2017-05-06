@@ -1,0 +1,191 @@
+
+header{
+	background-color: white;
+	padding: 7px;
+	box-shadow: 0 4px 2px -2px gray;
+}
+
+header a{
+	text-decoration: none;
+	color: black;
+}
+
+header li:hover a{
+	color: white;
+}
+
+.menu li{
+	padding: 5px;
+	display: inline;
+	margin-right: 50px;
+	color: black;
+	padding: 20px;
+}
+
+#logo{
+	position: relative;
+	width: 45px;
+	float: left;
+	margin-right: 40px;
+	padding: 0;
+}
+
+.menu li:hover{
+	border-radius: 10px;
+	background-color: #1C1C1C;
+	color: white;
+}
+
+#usuario {
+	float: right;
+	height: 50px;
+}
+
+.section:hover ul{
+	display: block;
+}
+
+#claudia {
+	position: relative;
+	color: black;
+	font-family: arial;
+	text-align: right:
+}
+
+#busca {
+	margin-left: 10px;
+	border-radius: 10px;
+}
+
+#config{
+	display: none;
+}
+
+/*Sub-menus*/
+
+.subs{
+	display: none;
+	color: black;
+}
+
+.menu ul li:hover ul li{
+	display: block;
+}
+
+
+/*Fim Cabeçalho*/
+
+.meio img{
+	width: 100%;
+}
+
+.dentroimg{
+	color: white;
+	position: absolute;
+	margin-top: -200px;
+}
+
+/*fade in eventos*/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/*fim fade in*/
+
+.eventos div{
+	margin-left: 95px;
+	margin-bottom: 250px;
+	padding: 15px;
+	box-shadow: 10px 10px 5px #888888;
+	-webkit-animation: fadein 3s;
+	
+}
+
+.eventos div img{
+	margin: 0px;
+	align: left;
+	width: 85px;
+	border: solid 4px white;
+}
+
+.evento1{
+	position: relative;
+	width: 280px;
+	height: 300px;
+	margin-top: 10px;
+	margin-left: 5px;
+	border-radius: 10px;
+	background-color: #FFD700;
+	text-align: center;
+	float: left;
+}
+
+.evento1 label{
+	padding-top: 50px;
+}
+
+.evento2{
+	position: relative;
+	width: 280px;
+	height: 300px;
+	margin-top: 10px;
+	margin-left: 5px;
+	border-radius: 10px;
+	background-color: #FF4500;
+	text-align: center;
+	float: left;
+}
+
+.evento2 label{
+	padding: 10px;
+}
+
+.evento3{
+	position: relative;
+	width: 280px;
+	height: 300px;
+	background-color: green;
+	margin-top: 10px;
+	margin-left: 5px;
+	border-radius: 10px;
+	text-align: center;
+	float: left;
+}
+
+.evento3 label{
+	padding: 10px;
+}
+
+/*Footer*/
+
+.rodape{
+	background-color: #1C1C1C;
+	width: 100%;
+	height: 308;
+	margin-top: 100px;
+	clear: both;
+}
+
+.conteudo div{
+	float: left;
+	margin-left: 20px;
+}
+
+div.4 a:hover{
+	text-decoration: underline;
+}
+
+div.social img{
+	width: 30px;
+	margin-right: 20px;
+	margin-top: 250px;
+}
+
+
+

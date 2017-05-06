@@ -7,24 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 	
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String irPara(){
 		return "index.html";
 	}
 	
-	@GetMapping("/please")
+	@GetMapping("/cad")
 	public String chamar(){
-		return "pfvr.html";
+		return "cadastro.html";
 	}
 	
 	@GetMapping("/vamo")
 	public String chamar2(){
-		return "web.html";
+		return "login2.html";
 	}
 	
-	@GetMapping("/")
-	public String irPara2(){
-		return "index2.html";
-	}
-
 }

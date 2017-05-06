@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html data-ng-app="appDogLove">
+
+	<head>
+		<base href='/' />
+		<meta charset="utf-8"/>
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+		<script src="./JavaScript/app.js"></script>
+		<script src="./JavaScript/controllers/agendaController.js"></script>
+		<script src="./JavaScript/controllers/cadastroController.js"></script>
+		<script src="./JavaScript/controllers/homeController.js"></script>
+		<script src="./js/cadastro.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/estilohome.css">
+	</head>
+	
+	<body data-ng-controller="mainController">
+	
+	<a href="#/home">home</a>
+	<a href="#/cadastro">cadastro</a>
+	<a href="#/agenda">agenda</a>
+		
+		<div data-ng-view>
+
+		</div>
+
+	</body>
+</html>
