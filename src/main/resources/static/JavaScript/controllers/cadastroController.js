@@ -2,6 +2,8 @@ appDogLove.controller('cadastroController', function($scope, $http) {
 
 	$scope.cliente = {};
 	$scope.listaClientes = [];
+	$scope.buscar = {};
+	$scope.global = {};
 
 	$scope.listarClientes = function() {
 		$http.get("/listarClientes").then(function(response) {
@@ -29,8 +31,9 @@ appDogLove.controller('cadastroController', function($scope, $http) {
 
 					window.alert($scope.cliente.nome + " "
 							+ "foi adicionado a lista de clientes");
+					$scope.cliente.nome="";
 					console.log(response.data);
-
+					
 					$scope.listarClientes();
 
 				}, function() {
@@ -40,7 +43,7 @@ appDogLove.controller('cadastroController', function($scope, $http) {
 				});
 
 	};
-	
+
 	$scope.listarClientes();
 
 });

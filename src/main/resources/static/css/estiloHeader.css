@@ -1,24 +1,24 @@
 
 header{
-	background-color: white;
+	background: #1C1C1C;
 	padding: 7px;
 	box-shadow: 0 4px 2px -2px gray;
 }
 
 header a{
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 
 header li:hover a{
-	color: white;
+	opacity: 0.5;
 }
 
 .menu li{
 	padding: 5px;
 	display: inline;
 	margin-right: 50px;
-	color: black;
+	color: white;
 	padding: 20px;
 }
 
@@ -32,8 +32,8 @@ header li:hover a{
 
 .menu li:hover{
 	border-radius: 5px;
-	background-color: #1C1C1C;
 	color: white;
+	background-color: #4F4F4F;
 }
 
 #usuario {
@@ -47,7 +47,7 @@ header li:hover a{
 
 #claudia {
 	position: relative;
-	color: black;
+	color: white;
 	font-family: arial;
 	text-align: right:
 }
@@ -65,7 +65,7 @@ header li:hover a{
 
 .subs{
 	display: none;
-	color: black;
+	color: white;
 }
 
 .menu ul li:hover ul li{

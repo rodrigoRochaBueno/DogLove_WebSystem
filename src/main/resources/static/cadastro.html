@@ -8,8 +8,8 @@
 				<div class="menuLateral">
 					<h4>Opções</h4><br/>
 					<ul type="none">
-						<li id="cadastrar"> Cadastrar</li>
-						<li id="listar"> Listar</li>
+						<li id="cadastrar"><a ng-click="global.isReplyFormOpen = false">Cadastrar</a></li>
+						<li id="listar"><a ng-click="global.isReplyFormOpen = true">Listar</a></li>
 						<li id="alterar"> Alterar</li>
 					</ul>
 				</div>
@@ -18,13 +18,12 @@
 					
 					<h2>Clientes</h2>
 					<form style="text-align: center; ">
-						<input type="search" placeholder="Buscar cliente pelo nome" />
+						<input type="search" placeholder="Buscar cliente pelo nome" id="getByName"/>
 						<button type="submit">
 						<i class="fa fa-search"></i>
 						</button>
-					</form>
 					
-					<div id="cadastro">
+					<div id="cadastro" ng-show="!global.isReplyFormOpen">
 						<div class="left" style="float: left;">
 							<p>Nome:<input type="text" ng-model="cliente.nome"/></p>
 							<p>Raça:<input type="text" ng-model="cliente.raca"/></p>
@@ -35,14 +34,14 @@
 							<p>Dono:<input type="text" ng-model="cliente.dono"/></p>
 							<p>Telefone (12):<input type="text" ng-model="cliente.telefone"/></p>
 							Observações: <textarea style="width: 500px; height: 100px;" ng-model="cliente.obs"></textarea><br/>
+							<input type="button" value="Salvar" data-ng-click="salvarCliente()"/>
 						</div><br/>
-						<input type="button" value="Salvar Cliente" ng-click="salvarCliente()"/>
 					</div>
+					</form>
 					
-					<div id="lista">
 						
-						<div class="tabela" style="float: left;">
-							<table border="1">
+						<div class="table" style="float: left;" ng-show="global.isReplyFormOpen" id="replyForm">
+							<table border="1" id="tabela">
 									<tr>
 										<th>Nome</th>
 										<th>Raça</th>
@@ -59,7 +58,7 @@
 										<td>{{cli.cor}}</td>
 										<td>{{cli.dono}}</td>
 										<td>{{cli.telefone}}</td>
-										<th><a href=''>Editar</a>
+										<td><a href='#/clienteDetalhe/{{cli.id}}'>Detalhes</a></td>
 									</tr>
 									
 								

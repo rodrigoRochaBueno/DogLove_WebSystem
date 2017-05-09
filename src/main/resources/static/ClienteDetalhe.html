@@ -1,0 +1,30 @@
+
+<head>
+<meta charset=utf-8/>
+<link rel="stylesheet" type="text/css" href="css/estiloDetalhes.css">
+</head>
+
+<div class="menuLateral">
+					<h4>MENU</h4><br/>
+					<ul type="none">
+						<li id="cadastrar"><a href="#/cadastro">Cadastrar</a></li>
+						<li id="listar"><a href="#/cadastro">Listar</a></li>
+						<li id="alterar"> Alterar</li>
+					</ul>
+				</div>
+
+<div class="corpo" style="border: 1px solid gray; width: 400px; text-align: left; padding: 5px;">
+
+<img src="images/cliente1.jpg" style="width: 100px; border: 1px solid gray"><br/><br/>
+<div class="elements">
+<label>Nome: {{cliente.nome}}</label><br/><br/>
+<label>Raça: {{cliente.raca}}</label><br/><br/>
+<label>Porte: {{cliente.porte}}</label><br/><br/>
+<label>Cor: {{cliente.cor}}</label><br/><br/>
+<label>Dono: {{cliente.dono}}</label><br/><br/>
+<label>Telefone(12): {{cliente.telefone}}</label><br/><br/>
+<label>Obs: {{cliente.obs}}</label><br/><br/>
+<input type="button" value="Excluir" data-ng-click="excluir()"/>
+<input type="button" value="Editar"/>
+
+</div>

@@ -3,6 +3,7 @@ package br.com.criandoSozinho.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import br.com.criandoSozinho.model.Cliente;
@@ -10,16 +11,37 @@ import br.com.criandoSozinho.repository.ClientesRepository;
 
 @Service
 public class ClienteService {
-	
+
 	@Autowired
 	ClientesRepository clientesRepository;
-	
-	public void salvarCliente(Cliente cliente){
+
+	public void salvarCliente(Cliente cliente) {
 		clientesRepository.save(cliente);
 	}
-	
-	public List<Cliente> getClientes(){
+
+	public List<Cliente> getClientes() {
 		return clientesRepository.findAll();
+	}
+
+	public List<Cliente> buscarNome(String nome) {
+		return clientesRepository.getByName(nome);
+	}
+
+	public void excludeClient(long id) {
+		for (Cliente cli : clientesRepository.findAll()) {
+			if (cli.getId() == id)
+				clientesRepository.delete(cli);
+		}
+	}
+	
+	public Cliente getById(long id){
+		Cliente clie = new Cliente();
+		for(Cliente cli : clientesRepository.findAll()){
+			if(cli.getId() == id){
+				clie = cli;
+			}
+		}
+		return clie;
 	}
 
 }
