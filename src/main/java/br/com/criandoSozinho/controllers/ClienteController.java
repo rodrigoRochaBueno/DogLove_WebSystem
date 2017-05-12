@@ -17,6 +17,7 @@ import br.com.criandoSozinho.model.Cliente;
 import br.com.criandoSozinho.services.ClienteService;
 
 @RestController
+@RequestMapping("/security")
 public class ClienteController {
 
 	@Autowired

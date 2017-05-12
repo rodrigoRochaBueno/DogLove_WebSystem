@@ -1,22 +1,18 @@
-<!DOCTYPE>
-<html>
-	<head>
+<head>
 	<meta charset="utf-8"/>
 	<title>Dog Love login</title>
-	
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	
 	</head>
-	<body>
+	<body data-ng-controller="loginController">
 		<div class="tudo">
 			<img src="images/fotologin.jpg"/>
 			<div class="container">
 				<img id="senha" src="images/senha.png"/>
 				<form>
 					<img id="user" src="images/user.png"/>
-					<input type="text" class="campo" placeholder="Usuario"/><br/><br/>
-					<input type="password" class="campo" placeholder="*********"/><br/>
-					<input type="submit" class="btnok" value="Acessar" onclick=""/>
+					<input type="text" class="campo" placeholder="Usuario" data-ng-model="usuario.nome"/><br/><br/>
+					<input type="password" class="campo" placeholder="*********" data-ng-model="usuario.senha"/><br/>
+					<input type="submit" class="btnok" value="Acessar" data-ng-click="validar()"/>
 				</form>
 				<a href="" id="esqueci">Esqueci minha senha.</a>
 			</div>

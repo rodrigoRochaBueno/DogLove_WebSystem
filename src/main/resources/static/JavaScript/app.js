@@ -14,7 +14,10 @@ var appDogLove = angular.module("appDogLove", [ "ngRoute" ])
 	}).when('/clienteDetalhe/:clienteId', {
 		templateUrl : 'ClienteDetalhe.html',
 		controller : 'clienteDetalheController'
-	})
+	}).when('/login', {
+		templateUrl: 'login2.html',
+		controller: 'loginController'
+	});
 
 })
 
@@ -24,8 +27,11 @@ var appDogLove = angular.module("appDogLove", [ "ngRoute" ])
 			$scope.$location = $location;
 			$scope.$route = $route;
 			$scope.$routeParams = $routeParams;
+			
+			window.open("http://localhost:8092/#/login", "_self");
 
 		})
+
 
 .controller("clienteDetalheController", function($scope, $http, $routeParams) {
 
@@ -70,4 +76,9 @@ var appDogLove = angular.module("appDogLove", [ "ngRoute" ])
 
 	};
 
+});
+
+appDogLove.config(function($httpProvider){
+	$httpProvider.interceptors.push('tokenInterceptor');
+	
 });
