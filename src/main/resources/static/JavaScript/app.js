@@ -41,7 +41,7 @@ var appDogLove = angular.module("appDogLove", [ "ngRoute" ])
 	
 	$scope.excluir = function(){
 		if(window.confirm("Tem certeza de que deseja excluir esse cliente permanentemente??")){
-		$http({method: "DELETE", url: "/deletarCliente/" + $scope.cliente.id})
+		$http({method: "DELETE", url: "/security/deletarCliente/" + $scope.cliente.id})
 		.then(function(response){
 			console.log(response.data);
 			
@@ -53,7 +53,7 @@ var appDogLove = angular.module("appDogLove", [ "ngRoute" ])
 	   };
 	};
 
-	$http.get('/getById/' + $routeParams.clienteId).then(function(response) {
+	$http.get('/security/getById/' + $routeParams.clienteId).then(function(response) {
 
 		$scope.cliente = response.data;
 		console.log(response.data);
@@ -63,7 +63,7 @@ var appDogLove = angular.module("appDogLove", [ "ngRoute" ])
 	});
 
 	$scope.getByName = function() {
-		$http.get("/getByName/" + $scope.buscar.nome).then(function(response) {
+		$http.get("/security/getByName/" + $scope.buscar.nome).then(function(response) {
 
 			$scope.clientes = response.data;
 			console.log(response.data);

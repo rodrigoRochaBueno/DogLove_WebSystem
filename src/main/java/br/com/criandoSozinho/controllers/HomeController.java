@@ -8,7 +8,7 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String irPara() {
-		return "login2.html";
+		return "index.html";
 	}
 
 }

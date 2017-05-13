@@ -4,7 +4,11 @@ appDogLove.controller("loginController", function($scope, $http, $window) {
 	$scope.token = "";
 
 	$scope.validar = function() {
-		$http.post("/autenticar", $scope.usuario).then(function(response) {
+		$http({
+			method : "POST",
+			url : "http://localhost:8092/autenticar",
+			data : $scope.usuario
+		}).then(function(response) {
 
 			console.log(response.data);
 

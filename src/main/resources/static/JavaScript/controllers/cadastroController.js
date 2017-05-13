@@ -6,7 +6,7 @@ appDogLove.controller('cadastroController', function($scope, $http) {
 	$scope.global = {};
 
 	$scope.listarClientes = function() {
-		$http.get("/listarClientes").then(function(response) {
+		$http.get("/security/listarClientes").then(function(response) {
 
 			$scope.listaClientes = response.data;
 
@@ -24,7 +24,7 @@ appDogLove.controller('cadastroController', function($scope, $http) {
 	$scope.salvarCliente = function() {
 		$http({
 			method : "POST",
-			url : "http://localhost:8092/salvar",
+			url : "http://localhost:8092/security/salvar",
 			data : $scope.cliente
 		}).then(
 				function(response) {
