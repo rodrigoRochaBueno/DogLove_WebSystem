@@ -10,5 +10,11 @@ public class HomeController {
 	public String irPara() {
 		return "index.html";
 	}
+	
+	@GetMapping("/teste")
+	public String goTo() {
+		return "testando.html";
+	}
+	
 
 }

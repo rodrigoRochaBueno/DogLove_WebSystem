@@ -16,7 +16,7 @@ public class SozinhoSpringBootApplication {
 	public FilterRegistrationBean filtroJwt(){
 		FilterRegistrationBean frb = new FilterRegistrationBean();
 		frb.setFilter(new TokenController());
-		frb.addUrlPatterns("/security/*");
+		frb.addUrlPatterns("/ola");
 		return frb;
 	}
 	

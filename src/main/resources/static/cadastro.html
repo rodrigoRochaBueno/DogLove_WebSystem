@@ -18,9 +18,11 @@
 					
 					<h2>Clientes</h2>
 					<form style="text-align: center; ">
-						<input type="search" placeholder="Buscar cliente pelo nome" id="getByName"/>
-						<button type="submit">
+						<input type="search" placeholder="Buscar cliente pelo nome" id="getByName" data-ng-model="buscar.nome" data-ng-change="getByName()" data-ng-focus="global2.lista = true"/>
 						<i class="fa fa-search"></i>
+						<div data-ng-show="global2.lista" data-ng-repeat="cli in resulBusca">
+							<a href="">{{cli.nome}}</a>
+						</div>
 						</button>
 					
 					<div id="cadastro" ng-show="!global.isReplyFormOpen">

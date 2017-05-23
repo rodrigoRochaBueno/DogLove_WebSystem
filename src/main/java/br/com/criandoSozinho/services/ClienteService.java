@@ -15,19 +15,19 @@ public class ClienteService {
 	@Autowired
 	ClientesRepository clientesRepository;
 
-	public void salvarCliente(Cliente cliente) {
+	public void save(Cliente cliente) {
 		clientesRepository.save(cliente);
 	}
 
-	public List<Cliente> getClientes() {
+	public List<Cliente> list() {
 		return clientesRepository.findAll();
 	}
 
-	public List<Cliente> buscarNome(String nome) {
+	public List<Cliente> getByName(String nome) {
 		return clientesRepository.getByName(nome);
 	}
 
-	public void excludeClient(long id) {
+	public void delete(long id) {
 		for (Cliente cli : clientesRepository.findAll()) {
 			if (cli.getId() == id)
 				clientesRepository.delete(cli);
